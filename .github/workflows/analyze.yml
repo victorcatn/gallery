@@ -1,0 +1,14 @@
+name: analyze app
+on: workflow_dispatch
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    container: cirrusci/flutter:stable
+    steps:
+    - uses: actions/checkout@v3
+    - run: set -e
+    - run: export BOT="false"
+    - run: flutter pub get
+    - run: dart format --set-exit-if-changed .
+    - run: flutter pub run custom_lint
+    - run: flutter analyze
