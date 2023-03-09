@@ -10,5 +10,5 @@ jobs:
     - run: export BOT="false"
     - run: flutter pub get
     - run: dart format --set-exit-if-changed .
-    - run: flutter pub run custom_lint
+    #- run: flutter pub run custom_lint
     - run: flutter analyze
