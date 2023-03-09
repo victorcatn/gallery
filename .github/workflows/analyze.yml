@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    container: cirrusci/flutter:stable
+    container: cirrusci/flutter:latest
     steps:
     - uses: actions/checkout@v3
     - run: set -e
